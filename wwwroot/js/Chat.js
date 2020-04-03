@@ -13,7 +13,8 @@ const toBase64 = file => new Promise((resolve, reject) => {
 document.getElementById("sendButton").disabled = true;
 
 
-
+//////Start Reading from here
+//1
 ///WEBSOCKET-RECEIVER
 connection.on("ReceiveMessge", async function (message, apiKey, apiId) {
     var base64 = await toBase64(Image);
@@ -33,6 +34,14 @@ connection.on("ReceiveMessge", async function (message, apiKey, apiId) {
         .then(res => console.log(res.json()))
 });
 
+////////You don't need anything below 1
+//////END
+///////I have the apikey and apiId with me,You will store it as an environment variable in your project
+/////the message variable can be ignored
+
+
+
+//////Don't read WEBSOCKET-SENDER
 ////WEBSOCKET-SENDER
 connection.start().then(function () {
     //Enable send button
